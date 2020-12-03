@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <style>
+        .myBorder {
+            border: 1px solid red;
+        }
+
+        .myBackground {
+            background-color: greenyellow;
+        }
+    </style>
+    <script>
+
+        // bai 1
+        // window.onload = function () {
+        //     $(document).ready(function () {
+        //         $('#btn1').click(clickHere);
+        //     })
+        // }
+
+        // function clickHere() {
+        //     alert('ok here');
+        // }
+
+
+
+
+        // bai 2
+        // $(function () {
+        //     let button1 = $('#btn1');
+        //     if (button1.length > 0)
+        //         button1.click(function () {
+        //             button1.css('background-color', 'red');
+        //         });
+        // });
+
+
+
+        // bai3
+
+        // $(function () {
+        //     $('table tr:even').css('background-color', 'green');
+        //     $('table tr:odd').css('color', 'red');
+
+        //     $('table tr').each(function (data) {
+        //         // console.log(data);
+        //         if (data === 3) {
+        //             $('table tr:').css('color', 'white');
+        //         }
+        //     });
+        // })
+
+
+        // bai 4
+
+        // $(function () {
+        //     $('.big:first').find('.small').css('border', '1px solid red');
+        // })
+
+
+        // bai 5
+
+        // $(function () {
+        //     $('span[title]').addClass('myBorder');
+        //     $('[title=div2]').addClass('myBackground');
+
+        //     alert($('[title=div1]').data('id'));
+        // })
+
+
+        // Toan tu so sanh chua [name *= "value"]
+        // Toan tu so sanh tien to [name ~= "value"] truoc, theo sau la dau cach
+        // Toan tu so sanh chua [name |= "value"] theo sau la dau -
+        // Toan tu so sanh duoc bat dau boi  [name^="value"]
+        // Toan tu so sanh duoc ket thuc boi  [name$="value"]
+
+
+
+        // bai 6
+        // $(function () {
+        //     $('#btn1').click(function () {
+        //         $('#lbl').text('abc');
+        //         $('#lbl').attr('style', 'color: red');
+        //     })
+        // })
+
+
+        // $(function () {
+        //     $('#btn1').click(function () {
+        //         $('#spanProp').text($('#ck1').prop('checked'));
+        //         $('#spanAttr').text($('#ck1').attr('checked'));
+        //     });
+        // })
+
+
+        // bai 7
+
+        // $(function () {
+        //     $('#btnSubmit').on('click', function {
+        //         const chkChecked = $('input[type="checkbox"]:checked');
+        //         if (chkChecked.length > 0) {
+        //             $('#result').html(chkChecked.length + " checkbox checked <br/>");
+
+        //             chkChecked.each(function () {
+
+        //                 // them gia tri vao sau mot thuoc tinh
+        //                 $('#result').append($(this).val() + "<br/>");
+        //             });
+        //         }
+        //         else {
+        //             $('#result').html('No checked checkbox');
+        //         }
+        //     })
+        // })
+
+
+        // bai 8
+
+        // $(function () {
+        //     $('#btnSubmit').click(function () {
+        //         let selected = $('#ddlSkills option:selected');
+        //         if (selected.length > 0) {
+        //             $('#result').html("Value: " + selected.val());
+        //         }
+        //         else
+        //             $('#result').html("No selected");
+        //     });
+        // });
+
+        // bai 9
+
+
+        // $(function () {
+        //     $('li').each(function (index, element) {
+        //         $(this).css('color', 'red');
+        //     });
+        // });
+
+
+
+        // bai 10
+
+        // $(function () {
+        //     let employeeJson = [
+        //         {
+        //             "firstName": "TEDU",
+        //             "lastName": "APp",
+        //             "email": "nguyentri.7264@gmail.com",
+        //             "age": 14
+        //         },
+        //         {
+        //             "firstName": "TEDU 2",
+        //             "lastName": "APp 2",
+        //             "email": "nguyentri.7264@gmail.com 2",
+        //             "age": 16
+        //         }
+        //     ];
+
+        //     let result = '';
+        //     $.each(employeeJson, (index, item) => {
+        //         result += `firstName : ${item.firstName} <br/>`;
+        //     });
+
+        //     $('#result').html(result);
+        // })
+
+
+
+        // bai 11
+
+        // prepend element: Là thêm mới một nội dung vào đó vào phần đầu tiên của nội dung mỗi element thoả mãn selector.
+        // append element: Là thêm mới một nội dung nào đó vào cuối của nội dung mỗi element thoả mãn selector
+
+
+        // bài 12
+        // hasClass: trả về true nếu phần tử có chứa class được chỉ ra ngược lại là false
+        // addClass
+        // removeClass
+        // toggleClass: Nếu phần tử có class chỉ định sẽ remove, còn không có thì sẽ add
+
+    </script>
+</head>
+
+<body>
+
+    <div id="result"></div>
+
+
+
+    <!-- <ul>
+        <li>US</li>
+        <li>CN</li>
+        <li>KR</li>
+        <li>AUS</li>
+        <li>EN</li>
+        <li>VN</li>
+    </ul> -->
+
+
+    <!-- <label for="">
+        <input type="checkbox" name="skill" value="PHP" />PHP
+    </label>
+    <label for="">
+        <input type="checkbox" name="skill" value="NODE" />NODE
+    </label>
+    <label for="">
+        <input type="checkbox" name="skill" value="ANGULAR" />ANGULAR
+    </label>
+    <label for="">
+        <input type="checkbox" name="skill" value="REACT" />REACT
+    </label>
+    <label for="">
+        <input type="checkbox" name="skill" value="FLUTTER" />FLUTTER
+    </label> -->
+
+
+
+
+
+    <!-- <select name="" id="ddlSkills" multiple>
+        <option>Choose language</option>
+        <option value="C#">C#</option>
+        <option value="NODE">NODE</option>
+        <option value="ANGULAR">ANGULAR</option>
+        <option value="REACT">REACT</option>
+        <option value="FLUTTER">FLUTTER</option>
+    </select>
+
+    <div>
+        <button type=="button" id="btnSubmit">Submit</button>
+    </div>
+
+    <div id="result"></div> -->
+
+
+    <!-- <div id="lbl"></div>
+    <button id="btn1">Click</button>
+
+
+    <input type="checkbox" id="ck1" checked="checked">
+
+    <div id="div1">
+        <div>
+            spanProp: <span id="spanProp"></span>
+        </div>
+        <div>
+            spanAttr: <span id="spanAttr"></span>
+        </div>
+
+    </div> -->
+
+
+    <!-- <table style="width:100%">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+    </table> -->
+
+
+    <!-- <div class="big">
+        <span class="small">This is class selector</span>
+    </div>
+    <div class="big small">
+        <span class="small">This is class selector</span>
+    </div>
+    <div class="small">
+        <span class="test">This is class selector</span>
+    </div>
+    <div class="small">
+        <span class="xsmall">This is class selector 2</span>
+    </div> -->
+
+
+
+
+    <!-- <div class="demo" data-id="1" title="div1">
+        <span title="abc">This is first</span>
+    </div>
+    <div class="demo" title="div2">
+        <span>This is second</span>
+    </div>
+    <div class=" demo" title="div2">
+        <span>This is third</span>
+    </div>
+    <div class="demo" title="div3">
+        <span>This is fourth</span>
+    </div> -->
+
+
+
+
+</body>
+
+</html>
